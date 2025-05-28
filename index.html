@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interactive Navigation Menu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+    }
+
+    /* Fixed Navigation Bar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: linear-gradient(to right, #2193b0, #6dd5ed);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      transition: background 0.3s ease;
+    }
+
+    nav.scrolled {
+      background: linear-gradient(to right, #005c97, #363795);
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    li {
+      position: relative;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.2rem;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      color: #fff;
+      box-shadow: 0 0 10px rgba(0, 114, 255, 0.5);
+    }
+
+    /* Content to make scroll visible */
+    .content {
+      padding-top: 100px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .section {
+      margin: 3rem 0;
+      padding: 2rem;
+      background: #f0f9ff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <div class="section" id="home">
+      <h2>Home</h2>
+      <p>Welcome to our site. Scroll to see the navigation bar in action.</p>
+    </div>
+    <div class="section" id="features">
+      <h2>Features</h2>
+      <p>Our navigation bar changes color when you scroll.</p>
+    </div>
+    <div class="section" id="services">
+      <h2>Services</h2>
+      <p>Each menu item has a gradient hover effect for a modern look.</p>
+    </div>
+    <div class="section" id="contact">
+      <h2>Contact</h2>
+      <p>Contact us anytime. The nav stays fixed at the top.</p>
+    </div>
+  </div>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+</body>
+</html>
